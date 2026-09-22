@@ -22,6 +22,17 @@ export default defineConfig([
   "rules": {
     "no-unused-vars": "warn"
   }
-}
+  },
+    {
+    plugins: {
+      'react-refresh': reactRefresh,
+    },
+    rules: {
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
+    },
+  }
 
 ])
