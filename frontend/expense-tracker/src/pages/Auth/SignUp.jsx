@@ -1,9 +1,15 @@
-import AuthLayout from "../../components/AuthLayout";
-import { useState } from 'react';
+import AuthLayout from "../../components/layouts/AuthLayout";
+import { useContext, useState } from 'react';
 import Input from "../../components/Inputs/Input";
 import { validateEmail } from "../../utils/Helper";
 import { Link ,useNavigate } from "react-router-dom";
 import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
+import axios from "axios";
+import axiosInstance from "../../utils/axiosInstance";
+import { API_PATHS } from "../../utils/apiPath";
+import { UserContext } from "../../contexts/UserContext";
+
+import uploadImage from "../../utils/uploadImage"
 
 const SignUp = () => { 
     const [profilePic, setProfilePic] = useState(null);
@@ -12,6 +18,8 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
 
     const [error, setError] = useState(null);
+
+    const { updateUser } = useContext(UserContext);
 
     const navigate = useNavigate();
 
@@ -35,6 +43,37 @@ const SignUp = () => {
             return;
         }
         setError("");
+
+        try {
+            if (profilePic) {
+                const imgUploadRes = await uploadImage(profilePic);
+            
+                profileImageUrl = imgUploadRes.imageUrl || "";
+            }
+            const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER, {
+                fullName,
+                email,
+                password,
+                profileImageUrl
+            });
+
+           
+            console.log(profileImageUrl);
+
+            const { token, user } = response.data;
+
+            if (token) {
+                localStorage.setItem("token", token);
+                updateUser(user);
+                navigate("/dashboard");
+            }
+        } catch (error) {
+            if (error.response && error.message.data.message) {
+                setError(error.response.data.message);
+            } else {
+                setError("Something went wrong . Please try again. ");
+            }
+        }
 
     }
     return (
