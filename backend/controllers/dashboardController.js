@@ -59,7 +59,7 @@ exports.getDashboardData = async (req, res) => {
                     type: "expense"
                 })
             )
-        ].sort((a, b) => b.data - a.date);
+        ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   
 
