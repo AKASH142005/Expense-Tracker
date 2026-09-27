@@ -14,6 +14,7 @@ import ExpenseTransaction from "../../components/Dashboard/ExpenseTransaction";
 import Last30DaysExpenses from "../../components/Dashboard/Last30DaysExpenses";
 import RecentIncomeWithChart from "../../components/Dashboard/RecentIncomeWithChart";
 import RecentIncome from "../../components/Dashboard/RecentIncome";
+import axios from "axios";
 const Home = () => { 
     useUserAuth();
 
