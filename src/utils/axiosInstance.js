@@ -12,7 +12,7 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
     (config) => {
         const accessToken = localStorage.getItem("token");
-        const isPublicAuthRoute = /\/api\/v1\/auth\/(login|register)(\?|$)/.test(config.url || "");
+     const isPublicAuthRoute =/^\/v1\/auth\/(login|register)(\?.*|$)/.test(config.url || "");
         if (accessToken && !isPublicAuthRoute) {
             config.headers.Authorization = `Bearer ${accessToken}`;
         }
