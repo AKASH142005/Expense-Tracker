@@ -4,7 +4,6 @@ import Input from "../../components/Inputs/Input";
 import { validateEmail } from "../../utils/Helper";
 import { Link ,useNavigate } from "react-router-dom";
 import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
-import axios from "axios";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPath";
 import { UserContext } from "../../contexts/UserContext";
@@ -40,6 +39,11 @@ const SignUp = () => {
 
         if (!password) { 
             setError("Please enter the password");
+            return;
+        }
+
+        if (!password.length >= 8) { 
+            setError("Please enter the password Min 8 Character");
             return;
         }
         setError("");
