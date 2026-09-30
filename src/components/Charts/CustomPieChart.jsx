@@ -3,6 +3,7 @@ import {
     PieChart,
     Pie,
     Cell,
+    Sector ,
     Tooltip,
     ResponsiveContainer,
     Legend
@@ -11,11 +12,17 @@ import CustomLegend from './CustomLegend';
 import CustomTooltip from './CustomTooltip';
 const CustomPieChart = ({ 
     data , label ,totalAmount , colors , showTextAnchor
-}) => {
-    return <ResponsiveContainer width="100%" height={300}>
+}) => { 
+
+     const coloredChartData = data.map((entry, index) => ({
+        ...entry,
+        fill: colors[index % colors.length]
+     }));
+    
+    return <ResponsiveContainer width="100%" height={350}>
         <PieChart>
             <Pie 
-                data={data}
+                data={coloredChartData}
                 dataKey="amount"
                 nameKey="name"
                 cx="50%"
@@ -23,10 +30,9 @@ const CustomPieChart = ({
                 outerRadius={130}
                 innerRadius={100}
                 labelLine={false}
+                
             >
-                {data.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={colors[index % colors.length]}/>
-                ))}
+               
             </Pie>
             <Tooltip content={<CustomTooltip />}/>
             <Legend content={<CustomLegend />} />
@@ -36,7 +42,7 @@ const CustomPieChart = ({
                     <text
                         x="50%"
                         y="50%"
-                        dy={-25}
+                        dy={-20}
                         textAnchor="middle"
                         fill="#666"
                         fontSize="14px"
