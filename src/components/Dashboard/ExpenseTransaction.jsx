@@ -23,7 +23,7 @@ const ExpenseTransaction = ({ transactions, onSeeMore }) => {
                         date={moment(expense.date).format("Do MMM YYYY")}
                         amount={expense.amount}
                         type="expense"
-                        hideDeleteBtn
+                        hideDeleteBtn={true}
                     />
                 ))}
             </div>

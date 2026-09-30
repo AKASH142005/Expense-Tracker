@@ -13,7 +13,7 @@ const ExpenseList = ({ transactions, onDelete ,onDownload}) => {
                     <LuDownload className='text-base' /> Download 
                 </button>
             </div>
-            <div className='grid grid-cols-2 md:grid-cols-2'>
+            <div className='grid grid-cols-1 md:grid-cols-2'>
                 {transactions.map((expense) => (
                     <TransactionInfoCard
                         key={expense._id}
@@ -23,6 +23,7 @@ const ExpenseList = ({ transactions, onDelete ,onDownload}) => {
                         amount={expense.amount}
                         type="expense"
                         onDelete={() => onDelete(expense._id)}
+                        hideDeleteBtn={false}
                     />         
                 ))}
             </div>

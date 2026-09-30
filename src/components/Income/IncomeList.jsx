@@ -5,8 +5,8 @@ import moment from 'moment'
 const IncomeList = ({transactions , onDelete , onDownload}) => {
   return (
       <div className='card'>
-          <div className='flex items-center justify-center' >
-              <h5 className='text-lg'>Income SOurces</h5> 
+          <div className='flex items-center justify-between' >
+              <h5 className='text-lg'>Income Sources</h5> 
           <button className='card-btn' onClick={onDownload}>
               <LuDownload className="text-base" />
               Download
@@ -23,6 +23,7 @@ const IncomeList = ({transactions , onDelete , onDownload}) => {
                       amount={income.amount}
                       type="income"
                       onDelete={() => onDelete(income._id)}
+                      hideDeleteBtn={false}
                   />
               ))}
         </div>     

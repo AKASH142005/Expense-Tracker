@@ -1,5 +1,4 @@
 import React, { useState} from 'react'
-import Income from '../../pages/Dashboard/Income';
 import Input from '../../components/Inputs/Input'
 import EmojiPickerPopup from '../layouts/EmojiPickerPopup';
 
