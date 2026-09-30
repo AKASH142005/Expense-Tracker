@@ -115,7 +115,7 @@ useUserAuth()
 
     return (
          <DashboardLayout activeMenu="Income">
-            <div className="my-5 mx-auto">
+            <div className="my-5 mx-auto max-h-[calc(100vh-50px)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] ">
                 <div className="grid grid-cols-1 gap-6">
                     <div className="">
                         <IncomeOverview 

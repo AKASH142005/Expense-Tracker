@@ -23,6 +23,8 @@ const Home = () => {
     const [dashboardData, setDashboardData] = useState(null);
     const [loading, setLoading] = useState(false);
 
+
+
     const fetchDashboardData = async () => {
         if (loading) return;
         setLoading(true);
@@ -49,7 +51,7 @@ const Home = () => {
     }, []);
     return (
         <DashboardLayout activeMenu="Dashboard">
-         <div className="my-5 mx-auto overflow-y-auto max-h-[calc(100vh-4rem)] ">
+         <div className="my-5 mx-auto max-h-[calc(100vh-50px)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none]  ">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <InfoCard
                     icon={<IoMdCard />}
@@ -93,12 +95,12 @@ const Home = () => {
                     />
 
                     <RecentIncomeWithChart
-                        data = {dashboardData?.last60DaysIncome?.transactions?.slice(0, 4) || []}
+                        data = {dashboardData?.last60DaysIncome?.transactions || []}
                         totalIncome={dashboardData?.totalIncome || 0}
                     />
 
                     <RecentIncome
-                        transactions={dashboardData?.last60DaysIncome?.transactions || []}
+                        transactions={dashboardData?.last60DaysIncome?.transactions.slice(0,4) || []}
                         onSeeMore={() => navigate("/income")}
                         />
                 </div>

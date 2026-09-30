@@ -9,6 +9,7 @@ import DashboardLayout from "../../components/layouts/DashboardLayout";
 import Modal from "../../components/layouts/Modal";
 import AddExpenseForm from "../../components/Expense/AddExpenseForm";
 import ExpenseList from "../../components/Expense/ExpenseList"
+import DeleteAlert from "../../components/layouts/DeleteAlert";
 const Expense = () => { 
     useUserAuth();
 
@@ -16,7 +17,7 @@ const Expense = () => {
     const [loading, setLoading] = useState(false);
 
     const [openDeleteAlert, setOpenDeleteAlert] = useState({
-        show: false,
+        show:false,
         data:null
     })
 
@@ -81,11 +82,11 @@ const Expense = () => {
 
     const deleteExpense = async (id) => {
         try {
-            await axiosInstance.delete(API_PATHS.INCOME.DELETE_INCOME)
+            await axiosInstance.delete(API_PATHS.EXPENSE.DELETE_EXPENSE(id))
 
-            setOpenAddExpenseModal({ show: false, data: null });
-            toast.success("Income details deleted successfully");
-            fetchIncomeDetails();
+            setOpenDeleteAlert({ show: false, data: null });
+            toast.success("Expense details deleted successfully");
+            fetchExpenseDetails();
         } catch (error) {
             console.error(
                 "Error deleting expense:",
@@ -121,7 +122,7 @@ const Expense = () => {
     }, []);
     return (
          <DashboardLayout activeMenu="Expense">
-            <div className="my-5 mx-auto">
+            <div className="my-5 mx-auto max-h-[calc(100vh-50px)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] ">
                 <div className="grid grid-cols-1 gap-6">
                     <div className="">
                         <ExpenseOverview
@@ -144,6 +145,18 @@ const Expense = () => {
                     onClose={() => setOpenAddExpenseModal(false)}
                     title="Add Expense"
                 > <AddExpenseForm onAddExpense={handleAddExpense} />
+                    
+                </Modal>
+               
+                <Modal
+                    isOpen={openDeleteAlert.show}
+                    onClose={() => setOpenDeleteAlert({ show: false, data: null })}
+                    title="Delete Expense"     
+                >
+                    <DeleteAlert
+                     content="Are you sure you want to delete this expense detail?"
+                        onDelete={() => deleteExpense(openDeleteAlert.data)}
+                    />
                 </Modal>
             </div>
             </DashboardLayout>
