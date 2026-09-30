@@ -44,11 +44,11 @@
 
 ## 🚀 Live Demo
 
-| Part                              | Link                                |
-| --------------------------------- | ----------------------------------- |
-| 🌐 Frontend (Netlify)             | `https://your-app.netlify.app`      |
-| ⚙️ Backend API (Catalyst AppSail) | `https://your-appsail-domain`       |
-| 📂 Backend source                 | `<add your backend repo link here>` |
+| Part                              | Link                                                         |
+| --------------------------------- | ------------------------------------------------------------ |
+| 🌐 Frontend (Netlify)             | `https://expensetrackerakk.netlify.app/`                     |
+| ⚙️ Backend API (Catalyst AppSail) | `https://appsail-50046310854.development.catalystappsail.in` |
+| 📂 Backend source                 | ``                                                           |
 
 > 🔑 **Demo login:** `demo@example.com` / `demo1234` _(replace with your own test account, or delete this line)_
 
