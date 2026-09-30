@@ -11,7 +11,7 @@
 [![Node](https://img.shields.io/badge/Node-20.19%2B%20%7C%2022.12%2B-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org)
 [![Netlify](https://img.shields.io/badge/Deployed_on-Netlify-00C7B7?logo=netlify&logoColor=white)](https://www.netlify.com)
 
-[🚀 Live Demo](#-live-demo) · [✨ Features](#-features) · [🏗️ Architecture](#%EF%B8%8F-architecture) · [⚡ Quick Start](#-quick-start) · [🔌 API](#-api-reference) · [🤝 Contributing](#-contributing)
+[🚀 Live Demo](https://expensetrackerakk.netlify.app/) · [✨ Features](#-features) · [🏗️ Architecture](#%EF%B8%8F-architecture) · [⚡ Quick Start](#-quick-start) · [🔌 API](#-api-reference) · [🤝 Contributing](#-contributing)
 
 </div>
 
