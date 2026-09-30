@@ -2,8 +2,6 @@ import React from 'react'
 import {
     PieChart,
     Pie,
-    Cell,
-    Sector ,
     Tooltip,
     ResponsiveContainer,
     Legend
