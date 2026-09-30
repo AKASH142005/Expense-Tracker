@@ -42,7 +42,7 @@ const SignUp = () => {
             return;
         }
 
-        if (!password.length >= 8) { 
+        if (password && password.length >= 8) { 
             setError("Please enter the password Min 8 Character");
             return;
         }
@@ -60,9 +60,6 @@ const SignUp = () => {
                 password,
                 profileImageUrl
             });
-
-           
-            console.log(profileImageUrl);
 
             const { token, user } = response.data;
 
