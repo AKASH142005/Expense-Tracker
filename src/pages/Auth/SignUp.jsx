@@ -42,7 +42,7 @@ const SignUp = () => {
             return;
         }
 
-        if (password && password.length >= 8) { 
+        if (password && password.length <= 8) { 
             setError("Please enter the password Min 8 Character");
             return;
         }
@@ -121,7 +121,7 @@ const SignUp = () => {
                      <p className="text-[13px] text-slate-800 mt-3">
                         Don't have an account ?{" "}
                      <Link className="font-medium text-primary underline" to="/login">
-                            SignUp
+                            Login
                         </Link>
                     </p>
                 </form>
