@@ -42,7 +42,7 @@ const SignUp = () => {
             return;
         }
 
-        if (password && password.length <= 8) { 
+        if (password && password.length < 8) { 
             setError("Please enter the password Min 8 Character");
             return;
         }
