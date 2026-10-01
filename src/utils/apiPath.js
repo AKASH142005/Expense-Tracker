@@ -1,4 +1,4 @@
-export const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:9000";
+export const BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://appsail-50046310854.development.catalystappsail.in";
 
 export const API_PATHS = {
     AUTH: {

@@ -52,7 +52,20 @@ const Login = () => {
     }
     return (
         <AuthLayout>
-            <div className="lg:w-[70%] h-3/4 md:h-full flex flex-col justify-center max-h-[calc(100vh-50px)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none]">
+            <div className=" w-full
+            h-[calc(100vh-80px)]
+            mt-10
+            flex
+            flex-col
+            justify-start
+            overflow-y-auto
+            overflow-x-hidden
+            pb-10
+            pr-2
+            box-border
+            [&::-webkit-scrollbar]:hidden
+            [-ms-overflow-style:none]
+            [scrollbar-width:none]">
                 <h3 className="text-xl font-semibold text-black">Welcome Back</h3>
                 <p className="text-xs text-slate-700 mt-[5px] md-6 ">
                     Please enter your credentials to login in
