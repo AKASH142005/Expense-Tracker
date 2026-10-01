@@ -66,27 +66,35 @@ const Login = () => {
             [&::-webkit-scrollbar]:hidden
             [-ms-overflow-style:none]
             [scrollbar-width:none]">
+            
                 <h3 className="text-xl font-semibold text-black">Welcome Back</h3>
                 <p className="text-xs text-slate-700 mt-[5px] md-6 ">
                     Please enter your credentials to login in
                 </p>
 
                 <form onSubmit={handleLogin}>
+            <div className="w-full max-w-3xl mt-3">
+
+                <div className="w-full">
                     <Input
                         value={email}
                         onChange={({ target }) => setEmail(target.value)}
                         label="Email Address"
                         placeholder="akash@example.com"
                         type="text"
-                    />
-
+                        />
+                    </div>
+                    
+                   
+                <div className="w-full">
                      <Input
                         value={password}
                         onChange={({ target }) => setPassword(target.value)}
                         label="Password"
                         placeholder="Min 8 Characters"
                         type="password"
-                    />
+                        />
+                </div>
                     {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
                     <button type="submit" className="btn-primary">
                         LOGIN
@@ -97,7 +105,8 @@ const Login = () => {
                         <Link className="font-medium text-primary underline" to="/signup">
                             SignUp
                         </Link>
-                    </p>
+                        </p>
+                </div>
                 </form>
             </div>
         </AuthLayout>
