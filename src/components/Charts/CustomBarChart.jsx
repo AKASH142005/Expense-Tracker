@@ -21,8 +21,13 @@ console.log("Chart Data Sample:", data[0])
 
   return (
       <div className="bg-white mt-6">
-          <ResponsiveContainer width="100%" height={350}>
-              <BarChart data={data}>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart
+            data={data}
+            width={500} 
+            height={300} 
+            margin={{ top: 5, right: 20, left: -20, bottom: 5 }}
+            >
                 <CartesianGrid  stroke='none'/>
                   <XAxis dataKey="month" tick={{ fontSize: 12, fill: "#555" }} stroke="none" />
                   <YAxis tick={{ fontSize: 12, fill: "#555" }} stroke="none" />
