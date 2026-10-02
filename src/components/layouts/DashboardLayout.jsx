@@ -6,7 +6,7 @@ import SideMenu from "./SideMenu";
 const DashboardLayout = ({children,activeMenu}) => {
     const {user} = useContext(UserContext)
     return (
-        <div className="" >
+        <div className="min-h-screen" >
             <Navbar activeMenu={activeMenu} />
 
             {user && (
@@ -14,7 +14,7 @@ const DashboardLayout = ({children,activeMenu}) => {
                     <div className="max-[1080px]:hidden">
                         <SideMenu activeMenu={activeMenu} />
                     </div>
-                    <div className="grow mx-5">{children}</div>
+                    <main className="min-w-0 flex-1">{children}</main>
                 </div>
             )}
         </div>
