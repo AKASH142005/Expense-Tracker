@@ -22,7 +22,8 @@ const SideMenu = ({activeMenu}) => {
     navigate(route);
   }
 
-  return <div className="w-64 h-[calc(100vh-61px)] bg-white border-gray-200/50 p-5 sticky top-[61px] z-20">
+ 
+  return <div className="w-64 h-[calc(100dvh-86px)] overflow-y-auto bg-white border-gray-200/50 p-5 sticky top-0 z-20 min-[1024px]:h-[calc(100vh-86px)] min-[1024px]:top-[86px]">
     <div className="flex flex-col items-center justify-center mt-3 gap-3 mb-7">
       {user?.profileImageUrl ? (
         <img

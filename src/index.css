@@ -15,10 +15,13 @@
         font-family: var(--font-display);
     }
     body {
+        
         background-color: white;
         overflow-x: hidden;
     }
 }
+
+
 
 .input-box {
     @apply w-full flex justify-between gap-3 text-sm text-black bg-slate-100 rounded px-4 py-3 mb-4 mt-3 border border-slate-200 outline-none;
@@ -30,7 +33,12 @@
 }
 
 .card {
-    @apply bg-white p-6 rounded-2xl shadow-md shadow-gray-100 border border-gray-200/50;
+    @apply w-full min-w-0 max-w-full box-border
+           bg-white
+           p-4 sm:p-5 md:p-6
+           rounded-2xl
+           shadow-md shadow-gray-100
+           border border-gray-200/50;
 }
 
 .card-btn {

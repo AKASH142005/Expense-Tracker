@@ -51,7 +51,7 @@ const Home = () => {
     }, []);
     return (
         <DashboardLayout activeMenu="Dashboard">
-         <div className="my-5 mx-auto max-h-[calc(100vh-80px)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none]  ">
+         <div className="overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] w-full px-3 sm:px-5 mb-80 pb-24">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <InfoCard
                     icon={<IoMdCard />}

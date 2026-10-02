@@ -122,7 +122,7 @@ const Expense = () => {
     }, []);
     return (
          <DashboardLayout activeMenu="Expense">
-            <div className="my-5 mx-auto max-h-[calc(100vh-85px)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] ">
+            <div className="my-5 mx-auto mb-80 pb-24 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] ">
                 <div className="grid grid-cols-1 gap-6">
                     <div className="">
                         <ExpenseOverview
